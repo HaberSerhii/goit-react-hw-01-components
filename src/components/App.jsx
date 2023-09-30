@@ -8,14 +8,16 @@ import { Statistics } from './Statistics/Statistics';
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
+import styles from './App.module.css'
+
 
 export const App = () => {
   return (
-    <>
+    <main className={styles.main}>
       <Profile user={user} />
       <Statistics download={downloads} />
       <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
-    </>
+      <TransactionHistory item={transactions} />
+    </main>
   );
 };

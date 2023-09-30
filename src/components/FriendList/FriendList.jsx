@@ -3,7 +3,7 @@ import styles from './FriendList.module.css'
 export const FriendList = ({ friends }) => {
     return (
         <section className={styles.wrapper}>
-            <ul class={styles.friendList}>
+            <ul className={styles.friendList}>
                 {friends.map(({ avatar, name, isOnline, id }) => (
                 <li className={`${styles.item} ${isOnline ? styles.online : ''}`} key={id}>
                         <span className={`${styles.status} ${isOnline ? styles.online : ''}`}></span>
