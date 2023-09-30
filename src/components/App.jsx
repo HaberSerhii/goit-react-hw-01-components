@@ -1,12 +1,21 @@
 import user from 'dates/user.json'
-import { Profile } from './Profile/Profile';
+import downloads from 'dates/downloads.json'
+import friends from 'dates/friends.json'
+import transactions from 'dates/transactions.json'
 
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 
 export const App = () => {
   return (
     <>
       <Profile user={user} />
+      <Statistics download={downloads} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </>
   );
 };

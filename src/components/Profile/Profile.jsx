@@ -1,3 +1,5 @@
+import styles from "./Profile.module.css";
+
 export const Profile = ({
   user: {
     username,
@@ -8,28 +10,31 @@ export const Profile = ({
   },
 }) => {
     return (
-<div>
-    <div>
-        <img
+ <section className={styles.wrapper}>
+    <div className={styles.userInfo}>
+        <img className={styles.userAvatar}
             src={avatar}
             alt={username}
+            
         />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+        <h4 className={styles.userName}>{username}</h4>
+        <p className={styles.userTag}>@{tag}</p>
+        <p className={styles.userLocation}>{location}</p>
     </div>
 
-    <ul>
-        <li>
-            <span>Followers: </span><span>{ followers}</span>
+    <ul className={styles.listStats}>
+        <li className={styles.itemStats}>
+            <span className={styles.itemName}>Followers</span><h4 className={styles.itemCounter}>{ followers}</h4>
         </li>
-        <li>
-            <span>Views: </span><span>{ views}</span>
+        <li className={styles.itemStats}>
+            <span className={styles.itemName}>Views</span>
+            <h4 className={styles.itemCounter}>{ views}</h4>
         </li>
-        <li>
-            <span>Likes: </span><span>{ likes}</span>
+        <li className={styles.itemStats}>
+                    <span className={styles.itemName}>Likes</span>
+                    <h4 className={styles.itemCounter}>{likes}</h4>
         </li>
     </ul>
-</div>  
+</section>  
     )
 }
